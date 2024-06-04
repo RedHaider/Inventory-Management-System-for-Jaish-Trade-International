@@ -28,6 +28,7 @@
                             <th class="px-2 py-2 text-center">Date/Time</th>
                             <th class="px-2 py-2 text-center">Name</th>
                             <th class="px-2 py-2 text-center">Description</th>
+                            <th class="px-2 py-2 text-center">Categories</th>
                             <th class="px-2 py-2 text-center">Price</th>
                             <th class="px-2 py-2 text-center">Status</th>
                             <th class="px-2 py-2 text-center">Action</th>
@@ -42,6 +43,7 @@
                             <td class="px-2 py-1 align-middle">
                                 <p class="m-0 text-truncate">{{ product.description }}</p>
                             </td>
+                            <td class="px-2 py-1 align-middle">{{ product.category }}</td>
                             <td class="px-1 py-1 align-middle text-center">
                                 {% if product.status == '1' %}
                                 <span class="badge bg-primary bg-gradient rounded-pill px-2">Active</span> {% else %}

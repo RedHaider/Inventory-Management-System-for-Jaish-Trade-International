@@ -23,8 +23,10 @@ class Product(models.Model):
     description = models.TextField()
     price = models.FloatField(default=0)
     status = models.CharField(max_length=2, choices=(('1','Active'),('2','Inactive')), default=1)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     date_created = models.DateTimeField(default=timezone.now)
     date_updated = models.DateTimeField(auto_now=True)
+    
 
     def __str__(self):
         return self.code + ' - ' + self.name

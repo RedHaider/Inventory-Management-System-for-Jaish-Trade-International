@@ -101,11 +101,14 @@ class SaveProduct(forms.ModelForm):
     description = forms.Textarea()
     status = forms.ChoiceField(choices=[('1','Active'),('2','Inactive')])
     description = forms.CharField(max_length=250)
+    category = forms.ModelChoiceField(queryset=Category.objects.all(), required=False)
+
+   
 
 
     class Meta:
         model = Product
-        fields = ('code','name','description','status','price')
+        fields = ('code','name','description','status','price','category')
 
     def clean_code(self):
         id = self.instance.id if self.instance.id else 0
